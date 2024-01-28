@@ -1,90 +1,76 @@
 import React from "react";
-import { Typography, Paper, Container, Card, CardContent } from "@mui/material";
+import { Typography, Container, Card, CardContent } from "@mui/material";
+
+const ExperienceCard = ({ image, title, position, duration, experience }) => {
+  return (
+    <Card
+      sx={{
+        mb: 5,
+        borderRadius: 0,
+        overflow: "hidden",
+        width: "100%",
+        height: "100%",
+      }}
+    >
+      <img
+        src={image}
+        alt={title}
+        style={{ width: "100%", height: "200px", objectFit: "cover" }}
+      />
+      <CardContent sx={{ p: 3, height: "100%" }}>
+        <Typography variant="h5" fontWeight="bold" mb={2}>
+          {title}
+        </Typography>
+        <Typography variant="body1">
+          <strong>Position:</strong> {position}
+          <br />
+          <strong>Duration:</strong> {duration}
+          <br />
+          <strong>Experience:</strong> {experience}
+        </Typography>
+      </CardContent>
+    </Card>
+  );
+};
 
 function Experience() {
   return (
     <Container id="experience" sx={{ py: 5 }}>
-      <Paper elevation={3} style={{ padding: "20px", marginTop: "20px" }}>
-        <Typography variant="h4" align="center" gutterBottom>
-          Experience Details
-        </Typography>
+      <Typography variant="h4" align="center" gutterBottom>
+        Work Experience
+      </Typography>
 
-        {/* International Model United Nation */}
-        <Card sx={{ display: "flex", mb: 5 }}>
-          <img
-            src="./imun.jpg"
-            alt="International Model United Nation"
-            style={{ width: "50%" }}
-          />
-          <CardContent sx={{ flex: "1 0 auto" }}>
-            <Typography variant="h5" component="div" fontWeight="bold" mb={2}>
-              International Model United Nation
-            </Typography>
-            <Typography variant="body1">
-              <strong>Position:</strong> Official Campus Ambassador
-              <br />
-              <strong>Duration:</strong> Dec 2021 - May 2022
-              <br />
-              <strong>Contribution:</strong> Developed proposals, assisted in
-              marketing and business development, and assessed, managed, and
-              coordinated the IMUN conferences.
-            </Typography>
-          </CardContent>
-        </Card>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+          gap: "20px",
+        }}
+      >
+        <ExperienceCard
+          image="https://play-lh.googleusercontent.com/osoaojw0IpMUmYtI1btn1jiEKrn1LnbRUemyU45Vq2xxtRHGeqm0x05pauC7PkS4f60=w240-h480-rw"
+          title="ThinkNEXT Technologies Pvt. Ltd."
+          position="ReactJS Intern"
+          duration="June 2023 - July 2023"
+          experience="Mastered ReactJS during ThinkNext Technologies internship, refining critical thinking. Certified in Industrial Training and Internship, showcasing commitment. Established a strong foundation in ReactJS and web development for a promising career."
+        />
 
-        {/* Student Organisation - Griffin (LPU) */}
-        <Card sx={{ display: "flex", mb: 5 }}>
-          <img
-            src="./Griffin.png"
-            alt="Student Organisation - Griffin (LPU)"
-            style={{ width: "50%" }}
-          />
-          <CardContent sx={{ flex: "1 0 auto" }}>
-            <Typography variant="h5" component="div" fontWeight="bold" mb={2}>
-              Student Organisation - Griffin (LPU)
-            </Typography>
-            <Typography variant="body1">
-              <strong>Position:</strong> Co-CEO GRIFFIN and Lead of Content
-              Writing Team
-              <br />
-              <strong>Duration:</strong> Jan 2022 - Present
-              <br />
-              <strong>Contribution:</strong> Developed content for various small
-              and large-scale events, both online and offline. Managed the team
-              and organization with professional responsibility and ensured the
-              timely submission of projects.
-            </Typography>
-          </CardContent>
-          <img
-            src="./griffin.jpg"
-            alt="Student Organisation - Griffin (LPU)"
-            style={{ width: "50%" }}
-          />
-        </Card>
+        <ExperienceCard
+          image="https://scontent.fixc1-7.fna.fbcdn.net/v/t39.30808-6/277590414_348860680631666_1607015186349856313_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=783fdb&_nc_ohc=f9RHa5BhV5YAX9ouYQe&_nc_ht=scontent.fixc1-7.fna&oh=00_AfDkjonQ08laxjhXlRNTra5F275B1KHm_uBPRbRLEmH8dQ&oe=65BB8F27"
+          title="Omninos Web Technologies Pvt. Ltd."
+          position="Web Design Intern"
+          duration="Jun 2022 - July 2022"
+          experience="Hands-on web development experience with HTML, CSS, and JavaScript. Demonstrated expertise in crafting responsive interfaces. Effective collaboration at Omninos Solutions, delivering quality solutions by working with cross-functional teams. Proven client-focused approach ensures successful project outcomes."
+        />
 
-        {/* Omninos Web Technologies Pvt. Ltd. */}
-        <Card sx={{ display: "flex" }}>
-          <img
-            src="./omninos.png"
-            alt="Omninos Web Technologies Pvt. Ltd."
-            style={{ width: "50%" }}
-          />
-          <CardContent sx={{ flex: "1 0 auto" }}>
-            <Typography variant="h5" component="div" fontWeight="bold" mb={2}>
-              Omninos Web Technologies Pvt. Ltd.
-            </Typography>
-            <Typography variant="body1">
-              <strong>Position:</strong> Web Design Intern
-              <br />
-              <strong>Duration:</strong> Jun 2022 - Present
-              <br />
-              <strong>Contribution:</strong> Worked on several real-time web
-              projects. Learned Bootstrap 5 and used it to make responsive
-              websites.
-            </Typography>
-          </CardContent>
-        </Card>
-      </Paper>
+        <ExperienceCard
+          image="https://media.licdn.com/dms/image/C5616AQHH2inivFABtA/profile-displaybackgroundimage-shrink_350_1400/0/1623159991097?e=1712188800&v=beta&t=DiKKq4BwOi5_WJAly_TfcuOy4pnKvnLJ0Qm7BjWL7EY"
+          title="Student Organisation - Griffin (LPU)"
+          position="Co-CEO GRIFFIN and Lead of Content Writing Team"
+          duration="Jan 2022 - April 2023"
+          experience="Skilled in event organization, content creation, and team leadership. Demonstrated ability to write articles, reports, and event descriptions. Proficient in coordinating with cross-functional teams for flawless event execution."
+        />
+      </div>
     </Container>
   );
 }

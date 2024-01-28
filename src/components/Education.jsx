@@ -150,7 +150,9 @@ const Education = () => {
               <Button
                 variant="contained"
                 onClick={() =>
-                  openCertificate("../assets/Academic Transcripts.pdf")
+                  openCertificate(
+                    "https://drive.google.com/file/d/1ntJhTus3Wqg-AC9xJGRP4jHSNGzQuj3Z/view?usp=sharing"
+                  )
                 }
               >
                 View Certificate
