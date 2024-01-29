@@ -7,6 +7,8 @@ import {
   CardContent,
   CardActions,
   Button,
+  CardMedia,
+  Link,
 } from "@mui/material";
 
 const Project = ({
@@ -18,29 +20,47 @@ const Project = ({
   projectLink,
   imgSrc,
 }) => (
-  <Grid item md={6}>
-    <Card sx={{ backgroundColor: "#343a40", color: "white" }}>
+  <Grid item md={4}>
+    <Card
+      sx={{
+        backgroundColor: "#212121",
+        color: "white",
+        height: "100%",
+        position: "relative",
+        "&:hover": {
+          boxShadow: "0 0 10px 8px #2196f3",
+        },
+        transition: "box-shadow 0.3s ease-in-out",
+      }}
+    >
+      <CardMedia
+        component="img"
+        height="140"
+        image={imgSrc}
+        alt={title}
+        sx={{ objectFit: "cover" }}
+      />
       <CardContent>
-        <Typography variant="h3" sx={{ mb: 5 }}>
+        <Typography variant="h5" sx={{ mb: 2 }}>
           {title}
         </Typography>
-        <Typography variant="body1" sx={{ mb: 2 }}>
+        <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
           <strong>Skills Used:</strong> {skillsUsed}
         </Typography>
-        <Typography variant="body1" sx={{ mb: 2 }}>
+        <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
           <strong>Completed:</strong> {completed}
         </Typography>
-        <Typography variant="body1" sx={{ mb: 2 }}>
+        <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
           <strong>Team:</strong> {team}
         </Typography>
-        <Typography variant="body1" sx={{ mb: 2 }}>
+        <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
           <strong>Project Type:</strong> {projectType}
         </Typography>
-        <Typography variant="body1" sx={{ mb: 2 }}>
+        <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
           <strong>Project Link:</strong>{" "}
-          <a href={projectLink} target="blank" style={{ color: "white" }}>
+          <Link href={projectLink} target="_blank" color="primary">
             {projectLink}
-          </a>
+          </Link>
         </Typography>
       </CardContent>
       <CardActions>
@@ -59,7 +79,7 @@ function Projects() {
       sx={{
         textAlign: "center",
         py: 5,
-        backgroundColor: "#343a40",
+        backgroundColor: "#121212",
         color: "white",
       }}
     >
@@ -75,7 +95,7 @@ function Projects() {
           team="Solo"
           projectType="Personal"
           projectLink="https://scorleos773.github.io/Roll-and-Die/"
-          imgSrc="./Project 1 img.png"
+          imgSrc="../assets/RollDie.gif"
         />
 
         <Project
@@ -85,8 +105,10 @@ function Projects() {
           team="Solo"
           projectType="Personal"
           projectLink="https://scorleos773.github.io/Number-Guessing-Game/"
-          imgSrc="./Project 2 img.png"
+          imgSrc="https://via.placeholder.com/300"
         />
+
+        {/* Add similar Project components for other projects */}
       </Grid>
     </Container>
   );

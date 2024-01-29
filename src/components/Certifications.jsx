@@ -6,14 +6,21 @@ import {
   Button,
   Card,
   CardContent,
+  Box,
 } from "@mui/material";
 import Carousel from "react-material-ui-carousel";
 
-function CertificationCard({ title, issuer, issuedOn, credentialsId, link }) {
+const CertificationCard = ({
+  title,
+  issuer,
+  issuedOn,
+  credentialsId,
+  link,
+}) => {
   return (
-    <Card sx={{ width: 500, height: 400, backgroundColor: "#f8f9fa" }}>
+    <Card sx={{ width: "100%", height: "100%", backgroundColor: "#f8f9fa" }}>
       <CardContent>
-        <Typography variant="h4" gutterBottom>
+        <Typography variant="h5" gutterBottom>
           {title}
         </Typography>
         <Typography variant="body1" paragraph>
@@ -31,7 +38,7 @@ function CertificationCard({ title, issuer, issuedOn, credentialsId, link }) {
       </CardContent>
     </Card>
   );
-}
+};
 
 function Certifications() {
   const certificationsData = [
@@ -82,18 +89,51 @@ function Certifications() {
   ];
 
   return (
-    <Container id="certifications" sx={{ py: 5 }}>
+    <Container
+      id="certifications"
+      sx={{
+        py: 5,
+        textAlign: "center",
+        background:
+          "linear-gradient(to right, #ff6f61, #77c7f7, #6ac98d, #ffd166, #fb934d)",
+        animation: "gradientShift 20s infinite alternate",
+        color: "#ffffff",
+      }}
+    >
       <Paper elevation={3} style={{ padding: "20px", marginTop: "20px" }}>
         <Typography variant="h4" align="center">
           Licences and Certifications
         </Typography>
 
-        <Carousel>
+        <Carousel
+          sx={{
+            width: "80%",
+            margin: "0 auto",
+            backgroundColor: "#fb934d",
+            padding: "20px",
+            borderRadius: "10px",
+          }}
+        >
           {certificationsData.map((certification, index) => (
-            <CertificationCard key={index} {...certification} />
+            <Box key={index} display="flex" justifyContent="center">
+              <CertificationCard {...certification} />
+            </Box>
           ))}
         </Carousel>
       </Paper>
+
+      <style>
+        {`
+          @keyframes gradientShift {
+            0% {
+              background-position: 0% 50%;
+            }
+            100% {
+              background-position: 100% 50%;
+            }
+          }
+        `}
+      </style>
     </Container>
   );
 }
