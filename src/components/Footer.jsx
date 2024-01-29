@@ -1,21 +1,26 @@
 import React from "react";
-import { Container, Typography, Link } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 
 function Footer() {
   return (
     <footer
-      className="p-5 text-light text-center position-relative"
-      style={{ backgroundColor: "darkslategray" }}
+      className="py-5 text-light text-center"
+      style={{ backgroundColor: "#2c3e50" }}
     >
-      <Container>
-        <Typography variant="body1" className="lead">
-          Copyright &copy; A SUKHAD SHARMA PRODUCTION
+      <Container
+        sx={{
+          textAlign: "center",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100%",
+        }}
+      >
+        <Typography variant="body1" sx={{ color: "#fff", fontSize: "1.2rem" }}>
+          &copy; {new Date().getFullYear()} | A SUKHAD SHARMA PRODUCTION |
+          Privacy Policy . Terms of Service . Contact Us
         </Typography>
-
-        <Link href="#" className="position-absolute bottom-0 end-0 p-5">
-          {/* You can uncomment the following line if you want to add an arrow icon */}
-          {/* <i className="bi bi-arrow-up-circle h1"></i> */}
-        </Link>
       </Container>
     </footer>
   );

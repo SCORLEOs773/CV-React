@@ -40,30 +40,30 @@ const Project = ({
         alt={title}
         sx={{ objectFit: "cover" }}
       />
-      <CardContent>
+      <CardContent sx={{ color: "white" }}>
         <Typography variant="h5" sx={{ mb: 2 }}>
           {title}
         </Typography>
-        <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+        <Typography variant="body2" sx={{ mb: 1 }}>
           <strong>Skills Used:</strong> {skillsUsed}
         </Typography>
-        <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+        <Typography variant="body2" sx={{ mb: 1 }}>
           <strong>Completed:</strong> {completed}
         </Typography>
-        <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+        <Typography variant="body2" sx={{ mb: 1 }}>
           <strong>Team:</strong> {team}
         </Typography>
-        <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+        <Typography variant="body2" sx={{ mb: 1 }}>
           <strong>Project Type:</strong> {projectType}
         </Typography>
-        <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+        <Typography variant="body2" sx={{ mb: 1 }}>
           <strong>Project Link:</strong>{" "}
           <Link href={projectLink} target="_blank" color="primary">
             {projectLink}
           </Link>
         </Typography>
       </CardContent>
-      <CardActions>
+      <CardActions sx={{ justifyContent: "center" }}>
         <Button href={projectLink} variant="outlined" color="primary">
           View Project
         </Button>
@@ -95,7 +95,47 @@ function Projects() {
           team="Solo"
           projectType="Personal"
           projectLink="https://scorleos773.github.io/Roll-and-Die/"
-          imgSrc="../assets/RollDie.gif"
+          imgSrc="https://github.com/SCORLEOs773/CV-React/blob/main/src/assets/RollDie.gif?raw=true"
+        />
+
+        <Project
+          title="Number Guessing Game"
+          skillsUsed="HTML 5, CSS 3, JS"
+          completed="June 2022"
+          team="Solo"
+          projectType="Personal"
+          projectLink="https://scorleos773.github.io/Number-Guessing-Game/"
+          imgSrc="https://via.placeholder.com/300"
+        />
+
+        <Project
+          title="Number Guessing Game"
+          skillsUsed="HTML 5, CSS 3, JS"
+          completed="June 2022"
+          team="Solo"
+          projectType="Personal"
+          projectLink="https://scorleos773.github.io/Number-Guessing-Game/"
+          imgSrc="https://via.placeholder.com/300"
+        />
+
+        <Project
+          title="Number Guessing Game"
+          skillsUsed="HTML 5, CSS 3, JS"
+          completed="June 2022"
+          team="Solo"
+          projectType="Personal"
+          projectLink="https://scorleos773.github.io/Number-Guessing-Game/"
+          imgSrc="https://via.placeholder.com/300"
+        />
+
+        <Project
+          title="Number Guessing Game"
+          skillsUsed="HTML 5, CSS 3, JS"
+          completed="June 2022"
+          team="Solo"
+          projectType="Personal"
+          projectLink="https://scorleos773.github.io/Number-Guessing-Game/"
+          imgSrc="https://via.placeholder.com/300"
         />
 
         <Project
